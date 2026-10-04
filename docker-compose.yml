@@ -1,0 +1,18 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: redesign
+      POSTGRES_PASSWORD: redesign
+      POSTGRES_DB: redesign
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U redesign"]
+      interval: 2s
+      retries: 15
+
+volumes:
+  pgdata:
