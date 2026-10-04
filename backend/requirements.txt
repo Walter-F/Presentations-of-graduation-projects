@@ -4,3 +4,6 @@ psycopg[binary]
 python-dotenv
 pytest
 httpx2
+ortools
+opencv-python-headless
+numpy
